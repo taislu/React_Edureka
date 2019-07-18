@@ -1,0 +1,21 @@
+SSR in React:
+-------------
+https://github.com/ayroblu/ssr-create-react-app
+
+Unit Testing:
+-------------
+JEST
+ describe() - Test Suite (Group of related test cases)
+ it() 	    - The Test case that you would create
+ expect()   - Assertion library
+Enzyme
+ shallow mounting - shallow()
+ deep mounting    - mount()
+ 
+
+===================================================
+
+Useful Urls:
+------------
+https://nextjs.org/
+https://www.gatsbyjs.org/
