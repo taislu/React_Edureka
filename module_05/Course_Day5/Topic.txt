@@ -1,0 +1,22 @@
+redux
+------
+createStore
+combineReducers
+
+store
+ - getState
+ - dispatch
+ - subscribe
+
+react-redux
+------------
+connect
+Provider
+
+Map the global state (store) to component's props
+Map the dispatch method (store.dispatch) to component's props
+
+
+Useful Urls:
+https://reactjs.org/docs/context.html
+	
