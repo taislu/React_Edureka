@@ -1,0 +1,36 @@
+React Router:
+-------------
+yarn add react-router-dom (npm i react-router-dom)
+
+Components:
+-----------
+- Route
+	- path
+	- component
+	- render
+- BrowserRouter
+- Link
+- Switch
+- Redirect
+
+Properties of our components:
+-----------------------------
+history
+match
+location
+
+Agenda:
+-------
+- Set up our initial routing. With 404
+- To get the flow of the system right
+- Parmaterized routes
+- Getting Authentication done
+
+
+State vs Props:
+---------------
+- State is private to the component
+- Props is something that the parent compoenent is aware of
+
+- State can be modified by the component
+- Props can not be modifed by the component

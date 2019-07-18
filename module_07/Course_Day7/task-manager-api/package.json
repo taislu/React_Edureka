@@ -1,0 +1,15 @@
+{
+  "name": "task-manager-api",
+  "version": "1.0.0",
+  "description": "This is a static api for task manager client",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Edureka!",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
