@@ -1,0 +1,63 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Learn Axios",
+      "description": "This is for learning axios",
+      "completed": false,
+      "date": "2019-06-22"
+    },
+    {
+      "id": 2,
+      "title": "Learn Redux Thunk",
+      "description": "This is for learning Thunk Actions",
+      "completed": false,
+      "date": "2019-06-23"
+    },
+    {
+      "id": 3,
+      "title": "Learn Redux",
+      "description": "This is for learning Redux",
+      "completed": false,
+      "date": "2019-06-22"
+    },
+    {
+      "title": "Learn APIs",
+      "description": "This is for learning Apis.",
+      "completed": false,
+      "date": "2019-07-07T03:17:56.934Z",
+      "id": 4
+    },
+    {
+      "title": "teset",
+      "description": "tet",
+      "completed": false,
+      "date": "2019-07-07T03:40:21.721Z",
+      "id": 5
+    },
+    {
+      "title": "asdfasfdasd",
+      "description": "asdfasdf",
+      "completed": false,
+      "date": "2019-07-07T03:42:04.163Z",
+      "id": 7
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

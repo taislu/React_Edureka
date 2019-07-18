@@ -1,0 +1,16 @@
+redux-thunk
+-----------
+- Middleware that allows us to create async actions
+
+axios
+-----
+- Promise based API library
+
+redux-logger
+------------
+- Logging tool used for debugging
+
+react-router-dom
+----------------
+- BrowserRouter
+- Route
