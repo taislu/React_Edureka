@@ -1,0 +1,58 @@
+React: 
+	Frontend Library that represents the View portion of MVC.
+	React is coded in JavaScript (ES6 and JSX)
+	React facilitates Component based programming
+		Component - 
+			is some portion of your UI (view)
+			it would return ONE element
+			in react first letter of the component name must be capital
+			Components are of two types:
+				1. Functional Component
+				2. Class Component
+
+
+ES6:
+	Is a language pattern in JavaScript (not fully understood by the browser)
+	The browser understands ES5 (another JS language pattern) fully.
+
+
+Problem Statements:
+1. Add a heading inside the div#root that says "hello world!"
+2. Replicate the same react code which we did from scratch with cra setup
+	> node -v
+	> npm -v
+	> npm install create-react-app -g
+	> create-react-app hello-world
+	> cd hello-world
+	> npm start (yarn start)
+
+Yarn installation:
+	npm install yarn -g
+
+
+ES6:
+----
+	ES6 is a language pattern that modern JS programmers use.
+	ES6 is the super set of ES5
+	All the modern browsers support 95% of es6
+	Concepts (Syntax):
+		Variables
+			var (ES5), let
+		Constants:
+			const
+		Fat Arrow Function
+		Template Strings
+		Class Keyword
+		Array / Object Destructuring
+		Spread Operator
+		import and export
+
+
+
+
+
+URLs:
+http://es6-features.org/#Constants
+https://reactjs.org
+nodejs.org
+https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en

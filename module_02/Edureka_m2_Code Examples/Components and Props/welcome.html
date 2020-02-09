@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+ 
+ <head>
+  
+  <meta charset="UTF-8" />
+ 
+   <title>Welcome</title>
+ 
+   <script src="js/react.js"></script>
+  
+   <script src="js/react-dom.js"></script>
+  
+   <script src="js/babel.min.js"></script>
+
+ </head>
+ 
+ <body>
+  
+  <div id="person"></div>
+ 
+   <script type="text/babel">
+	    function Welcome(person) {
+  return <h2>Hi, {person.name}</h2>;
+}
+
+function App() {
+  return (
+    <div>
+      <Welcome name="Sachin" />
+      <Welcome name="Ajay" />
+      <Welcome name="Akash" />
+      <Welcome name="Sanjiv" />
+    </div>
+  );
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('person')
+);
+
+    </script>
+  
+  </body>
+
+</html>

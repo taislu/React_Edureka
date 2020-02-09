@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+ 
+ <head>
+  
+  <meta charset="UTF-8" />
+ 
+   <title>Show Time</title>
+ 
+   <script src="js/react.js"></script>
+  
+   <script src="js/react-dom.js"></script>
+  
+   <script src="js/babel.min.js"></script>
+
+ </head>
+ 
+ <body>
+  
+  <div id="time"></div>
+ 
+   <script type="text/babel">
+	    function showtime() {
+  const element = (
+    <div>
+      <h1>Hello Everyone!</h1>
+      <h2>It's now {new Date().toLocaleTimeString()}.</h2>
+    </div>
+  );
+  ReactDOM.render(
+    element,
+    document.getElementById('time')
+  );
+}
+
+setInterval(showtime, 1000);
+
+    </script>
+  
+  </body>
+
+</html>

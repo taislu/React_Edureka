@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+ 
+ <head>
+  
+  <meta charset="UTF-8" />
+ 
+   <title>Containment</title>
+ 
+   <script src="js/react.js"></script>
+  
+   <script src="js/react-dom.js"></script>
+  
+   <script src="js/babel.min.js"></script>
+
+ </head>
+ 
+ <body>
+  
+  <div id="main"></div>
+ 
+  <script type="text/babel">
+function NewBorder(props) {
+  return (
+    <div className={'NewBorder NewBorder-' + props.color}>
+      {props.children}
+    </div>
+  );
+}
+
+function Dialog(props) {
+  return (
+    <NewBorder color="blue">
+      <h2 className="Dialog-title">
+        {props.title}
+      </h2>
+      <p className="Dialog-message">
+        {props.message}
+      </p>
+    </NewBorder>
+  );
+}
+
+function HelloDialog() {
+  return (
+    <Dialog
+      title="Hello Everyone"
+      message="Thanks for visiting!" />
+  );
+}
+
+  
+ReactDOM.render(
+  <HelloDialog />,
+  document.getElementById('main')
+);
+
+
+
+  </script>
+  
+ </body>
+
+</html>

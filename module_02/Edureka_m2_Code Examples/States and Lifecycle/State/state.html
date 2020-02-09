@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+ 
+ <head>
+  
+  <meta charset="UTF-8" />
+ 
+   <title>State Sample</title>
+ 
+   <script src="js/react.js"></script>
+  
+   <script src="js/react-dom.js"></script>
+  
+   <script src="js/babel.min.js"></script>
+
+ </head>
+ 
+ <body>
+  
+  <div id="states"></div>
+ 
+   <script type="text/babel">
+	    class Clock extends React.Component {
+        constructor(value)
+        {
+          super(value);
+          this.state = {date: new Date()};
+        }
+
+        render() {
+          return (
+            <div>
+              <h1>It's a Good Day!</h1>
+              <h2>Currently it's {this.state.date.toLocaleTimeString()}.
+              </h2>
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <Clock />,
+        document.getElementById('states')
+      );
+
+    </script>
+  
+  </body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+ 
+ <head>
+  
+  <meta charset="UTF-8" />
+ 
+   <title>Form</title>
+ 
+   <script src="js/react.js"></script>
+  
+   <script src="js/react-dom.js"></script>
+  
+   <script src="js/babel.min.js"></script>
+
+ </head>
+ 
+ <body>
+  
+  <div id="forms"></div>
+ 
+  <script type="text/babel">
+  	class NameForm extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {value: ''};
+
+      this.processChange = this.processChange.bind(this);
+      this.processSubmit = this.processSubmit.bind(this);
+    }
+
+    processChange(event) {
+      this.setState({value: event.target.value});
+    }
+
+    processSubmit(event) {
+      alert('A Person Name was submitted: ' + this.state.value);
+      event.preventDefault();
+    }
+
+    render() {
+        return (
+        <form onSubmit={this.processSubmit}>
+          <label>
+            Person Name:
+            <input type="text" value={this.state.value} onChange={this.processChange} />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+        );
+      }
+    }
+
+    ReactDOM.render(
+      <NameForm />,
+      document.getElementById('forms')
+    );
+
+  </script>
+  
+ </body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html>
+ 
+ <head>
+  
+  <meta charset="UTF-8" />
+ 
+   <title>Temperature</title>
+ 
+   <script src="js/react.js"></script>
+  
+   <script src="js/react-dom.js"></script>
+  
+   <script src="js/babel.min.js"></script>
+
+ </head>
+ 
+ <body>
+  
+  <div id="main"></div>
+ 
+  <script type="text/babel">
+
+  const tempTypes = {
+  c: 'Celsius',
+  f: 'Fahrenheit'
+};
+
+
+  function FeverCheck(props) {
+  if (props.celsius >= 36) {
+    return <p>You got Fever.</p>;
+  }
+  return <p>You are Fine.</p>;
+}
+
+
+  function toCelsius(fahrenheit) {
+  return (fahrenheit - 32) * 5 / 9;
+}
+
+function toFahrenheit(celsius) {
+  return (celsius * 9 / 5) + 32;
+}
+
+  	function convert(temperature, convert) {
+  const input = parseFloat(temperature);
+  if (Number.isNaN(input)) {
+    return '';
+  }
+  const output = convert(input);
+  const rounded = Math.round(output * 1000) / 1000;
+  return rounded.toString();
+}
+
+
+  	class TemperatureInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.processChange = this.processChange.bind(this);
+  }
+
+  processChange(e) {
+    this.props.onTemperatureChange(e.target.value);
+  }
+
+  render() {
+    const temperature = this.props.temperature;
+    const scale = this.props.scale;
+    return (
+      <fieldset>
+        <legend>Enter the temperature as {tempTypes[scale]}:</legend>
+        <input value={temperature}
+               onChange={this.processChange} />
+      </fieldset>
+    );
+  }
+}
+
+
+	class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.processCelsiusChange = this.processCelsiusChange.bind(this);
+    this.processFahrenheitChange = this.processFahrenheitChange.bind(this);
+    this.state = {temperature: '', scale: 'c'};
+  }
+
+  processCelsiusChange(temperature) {
+    this.setState({scale: 'c', temperature});
+  }
+
+  processFahrenheitChange(temperature) {
+    this.setState({scale: 'f', temperature});
+  }
+
+  render() {
+    const scale = this.state.scale;
+    const temperature = this.state.temperature;
+    const celsius = scale === 'f' ? convert(temperature, toCelsius) : temperature;
+    const fahrenheit = scale === 'c' ? convert(temperature, toFahrenheit) : temperature;
+
+    return (
+      <div>
+        <TemperatureInput
+          scale="c"
+          temperature={celsius}
+          onTemperatureChange={this.processCelsiusChange} />
+        <TemperatureInput
+          scale="f"
+          temperature={fahrenheit}
+          onTemperatureChange={this.processFahrenheitChange} />
+        <FeverCheck
+          celsius={parseFloat(celsius)} />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Calculator />,
+  document.getElementById('main')
+);
+
+  </script>
+  
+ </body>
+
+</html>

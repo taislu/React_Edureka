@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+ 
+ <head>
+  
+  <meta charset="UTF-8" />
+ 
+   <title>Hello Customer</title>
+ 
+   <script src="js/react.js"></script>
+  
+   <script src="js/react-dom.js"></script>
+  
+   <script src="js/babel.min.js"></script>
+
+ </head>
+ 
+ <body>
+  
+  <div id="hellocustomer"></div>
+ 
+   <script type="text/babel">
+	    function formatName(customer)
+      {
+        return customer.firstName + ' ' + customer.lastName;
+      }
+
+      const customer = {
+        firstName: 'Vijay',
+        lastName: 'Singh'
+      };
+
+      const element = (
+        <h1>
+      	  Hello, {formatName(customer)}!
+        </h1>
+      );
+
+      ReactDOM.render(
+        element,
+        document.getElementById('hellocustomer')
+      );
+
+    </script>
+  
+  </body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Redux with JS</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.min.js" integrity="sha256-IzarCF0rYxPn/q5nElDppcvsfwZwvBv2oafOeY1S8QY=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <h1>Counter</h1>
+  <hr />
+  <h2 id="counterH2"></h2>  
+  <button id="incr">+</button>
+  <button id="decr">-</button>
+  <button id="reset">Reset</button>
+
+  <script>
+    var counterH2 = document.querySelector('#counterH2')
+    var incr = document.querySelector('#incr')
+    var decr = document.querySelector('#decr')
+    var reset = document.querySelector('#reset')
+
+    var incrAction = {
+      type: 'INCR'
+    }
+
+    var decrAction = {
+      type: 'DECR'
+    }
+
+    var resetAction = {
+      type: 'RESET'
+    }
+
+    function counterReducer(state, action) {
+      if(typeof state === 'undefined') {
+        return 0
+      }
+
+      if(action.type === 'INCR') {
+        return state + 1
+      } else if (action.type === 'DECR') {
+        return state - 1
+      } else if (action.type === 'RESET') {
+        return 0
+      } else {
+        return state
+      }
+    }
+
+    var store = Redux.createStore(counterReducer)    
+
+    function render() {
+      counterH2.innerHTML = store.getState()
+    }
+    render()
+
+    store.subscribe(render)
+
+    incr.onclick = function() {
+      store.dispatch(incrAction)      
+    }
+
+    decr.onclick = function() {
+      store.dispatch(decrAction)
+    }
+
+    reset.onclick = function() {
+      store.dispatch(resetAction)
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+Flux Architechture
+-------------------
+- Dispatchers
+- Actions
+- Reducers
+- Stores
+
+Views => Dispatchers => Actions => Reducers => Stores => Views
+
+Redux Implementation
+---------------------
+npm i redux (yarn add redux)
+
+- Counter Example with Redux + JS
+- Counter Example with Redux + React
+	Counter Example with two counters where we need to manage state differently
+-------------------------------------
+Views => Actions => Reducers => Store => Views
+-------------------------------------
+- Actions
+	- Objects that have minimum 1 key called "type"
+		{ type: 'INCR' }
+		{ type: 'ADD_TASK', task: {} }
+		{ type: 'REMOVE_TASK', id: 123 }
+	- Action Objects may or may  not have a payload
+
+- Reducers
+	- Pure Functions Which would take in two args: (state, action)	
+	- Based on the action.type, it would return a new state
+	- Reducers would never modify the current state
+	- If no action.type matches the reducer would return state
+
+- Store		
+	- A Global State
+	- A Store can have any data type (number, boolean, string, array, object etc.)
+	  but in real world a store is always an object
+	- Store would have certain methods for us:
+		- store.dispatch() - Dispatch an action
+		- store.getState() - Get the current value of the store
+		- store.subscribe()- Listener
+	- Redux.createStore() allows you to create a store
+		It accepts one arg, ie. our reducer (root reducer)
+	- Redux.combineReducers() allows you to combine multiple reducers
+- Action Generators
+
+
+- Pure Function
+	- That has no side effects
+	- That doesn't modify it's arguments
+
+	function incr(a) {
+		return a+1;
+	}
+	
+	var a = 10;
+	a = incr(a);
+
+Useful Urls:
+-------------
+https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en
+https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en
+https://redux.js.org/
+https://facebook.github.io/flux/

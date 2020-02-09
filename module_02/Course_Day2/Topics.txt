@@ -1,0 +1,31 @@
+Components
+
+---------------------------
+Creating a Task Manager UI
+---------------------------
+
+State of the Component
+Lifecycle of the Component
+
+Bootstrap:
+----------
+- Container	
+	- Row
+		- Col
+		- Col
+	- Row
+		- Col
+	- Row
+		- Col
+		- Col
+	- Row
+
+Downloading Modules:
+--------------------
+Bootstrap - npm install bootstrap (yarn add bootstrap)
+Reactstrap - npm install reactstrap (yarn add reactstrap)
+
+Useful Urls:
+https://reactstrap.github.io/
+https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en
+https://reactjs.org/docs/state-and-lifecycle.html

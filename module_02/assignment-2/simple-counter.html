@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        
+        class Counter extends React.Component{
+            constructor(props){
+                super(props)
+                this.state={
+                    date: new Date(),
+                    count_1s: 0,
+                    count_5s: 0
+                }
+            }
+            
+            tick1s=()=>{
+                this.setState({
+                    date: new Date(),
+                    count_1s: this.state.count_1s + 1
+                })
+            }
+
+            tick5s=()=>{
+                this.setState({
+                    count_5s: this.state.count_5s + 1
+                })
+            }
+            
+            componentDidMount(){
+                this.timer1s = setInterval(
+                    ()=>this.tick1s(),
+                    1000
+                )
+                this.timer5s = setInterval(
+                    ()=>this.tick5s(),
+                    5000
+                )
+            }
+
+            componentWillUnmount(){
+                clearInterval(this.timer1s)
+                clearInterval(this.timer5s)
+            }
+            
+            render(){
+                return(
+                    <div style={style}>
+                        <h2>Current Time : {this.state.date.toLocaleTimeString()}</h2>
+                        <h2>One  Second Count : {this.state.count_1s}</h2>
+                        <h2>Five Second Count : {this.state.count_5s}</h2>
+                    </div>
+                    
+                )
+            }
+        }
+
+        const style = {
+            textAlign: "center",
+            margin: "10px",
+            border: "1px solid #eee",
+            boxShadow: "0 2px 2px #ccc",
+            width: "85%",
+            padding: "20px",
+            color: "yellow",
+            backgroundColor: "black"
+        };
+
+        ReactDOM.render(
+            <Counter />,
+            document.getElementById('root')
+        )
+
+    </script>
+</body>
+</html>

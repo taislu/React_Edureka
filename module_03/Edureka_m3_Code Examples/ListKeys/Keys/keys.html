@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+ 
+ <head>
+  
+  <meta charset="UTF-8" />
+ 
+   <title>Lists</title>
+ 
+   <script src="js/react.js"></script>
+  
+   <script src="js/react-dom.js"></script>
+  
+   <script src="js/babel.min.js"></script>
+
+ </head>
+ 
+ <body>
+  
+  <div id="lists"></div>
+ 
+  <script type="text/babel">
+	function NumberList(props)
+	{
+  		const numbers = props.params;
+  		const listValues = numbers.map((value) =>
+    	<li key={value.toString()}>
+      {value}
+    </li>
+
+  		);
+  		return (
+    		<ul>{listValues}</ul>
+  		);
+	}
+
+	const values = [11, 32, 23, 44, 15];
+	ReactDOM.render(
+	  <NumberList params={values} />,
+	  document.getElementById('lists')
+	);
+
+  </script>
+  
+ </body>
+
+</html>

@@ -1,0 +1,30 @@
+Install All Dependencies:
+-------------------------
+npm install / yarn install / yarn
+
+======================================
+
+Destructuring (Arrays and Objects)
+	{} - Objects
+	[] - Arrays
+
+Spread Operator (Arrays and Objects)
+	...
+
+=============================================================
+
+React and the DOM:
+------------------
+- React would always discourage the developer to manipulate the actual DOM
+- Instead the developer could play with the Virtual DOM
+- React would sync the Virtual DOM with the Actual DOM
+
+
+Class Component:
+----------------
+- Whenever you need to use component's state (this.state) you would go for class component
+- Whenever the state of a component is changed the component would re render.
+
+Useful Links:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
+https://eslint.org/

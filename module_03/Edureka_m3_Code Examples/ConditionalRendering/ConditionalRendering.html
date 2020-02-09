@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+ 
+ <head>
+  
+  <meta charset="UTF-8" />
+ 
+   <title>Conditional Rendering</title>
+ 
+   <script src="js/react.js"></script>
+  
+   <script src="js/react-dom.js"></script>
+  
+   <script src="js/babel.min.js"></script>
+
+ </head>
+ 
+ <body>
+  
+  <div id="render"></div>
+ 
+  <script type="text/babel">
+function EmployeeGreeting(props) {
+  return <h1>Welcome Employee!</h1>;
+}
+
+function ManagerGreeting(props) {
+  return <h1>Welcome Manager</h1>;
+}
+function Greeting(props) {
+  const isEmployee = props.isLoggedIn;
+  if (isEmployee) {
+    return <EmployeeGreeting />;
+  }
+  return <ManagerGreeting />;
+}
+
+ReactDOM.render(
+  <Greeting isEmployee={false} />,
+  document.getElementById('render')
+);
+
+
+
+
+
+  </script>
+  
+ </body>
+
+</html>

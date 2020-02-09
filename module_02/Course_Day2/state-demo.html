@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>State Demo</title>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    class StateDemo extends React.Component {
+      constructor(props) {
+        super(props)
+        console.log('Inside Constructor')
+        // this.counter = 10
+        this.state = {
+          counter: 0
+        }
+      }
+
+      componentDidMount() {
+        console.log('Inside Component did mount')
+      }
+
+      handleClick = () => {
+        console.log('incr')
+        // this.counter++
+        // this.forceUpdate()
+        this.setState({
+          counter: this.state.counter + 1
+        })
+      }
+
+      render() {
+        console.log('Inside Render')
+        return <p onClick={this.handleClick}>Counter :: {this.state.counter}</p>
+      }
+    }
+
+
+    function App() {
+      return <StateDemo />
+    }
+
+    ReactDOM.render(<App />, document.querySelector('#root'))
+  </script>
+</body>
+</html>
